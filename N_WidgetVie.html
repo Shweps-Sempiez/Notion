@@ -106,7 +106,7 @@ h1 {margin-top: 0;}
 <progress id="file" max="100" value="70">70%</progress><br>
 <br>
 Personnaliser :<br>
-    <br>
+    <br> <br> <br> <br> <br> <br> <br> <br> <br>
 
 <script>
   // Récupérer la barre
@@ -116,20 +116,13 @@ Personnaliser :<br>
   barre.value = 30;
 </script>
     
-Date de naissance :<br>
-16/01/1981<br>
+Date de naissance : 16/01/1981<br>
     <br>
-Espérance de vie (années)<br>
-80<br>
-    <br>
-Arrière-plan :<br>
-# 37474F<br>
-    <br>
-Couleur du texte<br>
-# F5F5F5<br>
-    <br>
-Couleur de la barre de vie <br>
-# 00C2DE<br>
+Espérance de vie (années) : 80 ans<br>
+   
+Arrière-plan : #37474F<br>
+Couleur du texte : #F5F5F5<br>
+Couleur de la barre de vie : #00C2DE<br>
     <br>
 Couleur de la barre d'année<br>
 # E91E63<br>
@@ -141,10 +134,10 @@ Couleur de la barre des mois<br>
 # 3F51B5<br>
 
     <div>
-    <progress id="Mois" max="100" value="70">70%</progress></div>
+    <progress id="mois" max="100" value="70">70%</progress></div>
 
         <div class="colonne">:</div>
-        <div class="pourcentageMois" id="sec"></div>
+        <div class="pourcentageMois" id="pourcentageMois"></div>
 <script>
 function progressionMois() {
                             let today = new Date();
