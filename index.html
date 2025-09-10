@@ -114,11 +114,11 @@ function clock() {
 
 hrs = today.getHours();
 if (hrs < 12)
-        greet = 'Good Morning  ';
+        greet = 'Bonjour  ';
     else if (hrs >= 12 && hrs <= 17)
-        greet = 'Bonjour ';
+        greet = 'Bonne après-midi ';
     else if (hrs >= 17 && hrs <= 24)
-        greet = 'Bonne après-midi  ';
+        greet = 'Bonsoir  ';
 // console.log(today.toLocaleTimeString());
 document.getElementById('greet').innerHTML = greet;
 document.getElementById('hour').innerHTML = hour;
