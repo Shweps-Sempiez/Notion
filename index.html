@@ -118,7 +118,7 @@ function date() {
             var optionsDate = { day: 'numeric', month: 'long', year: 'numeric' };
             var fullDate = today.toLocaleDateString("fr-FR", optionsDate);
             // Affichage avec saut de ligne
-            document.getElementById('date').innerHTML = "Nous sommes <b><span style="font-size:2rem;">" + dayName + "</span></b><br>Le " + fullDate;
+            document.getElementById('date').innerHTML = "Nous sommes <b><span style='font-size:2rem;'>" + dayName + "</span></b><br>Le " + fullDate;
 
 /* date sur une ligne type Lundi jj/mm/aaaa
             var options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
