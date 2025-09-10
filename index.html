@@ -104,8 +104,23 @@ h1 {margin-top: 0;}
 <script>
 function date() {
                 var today = new Date();
+
+/* date sur 2 lignes*/
+            // Jour de la semaine
+            var optionsDay = { weekday: 'long' };
+            var dayName = today.toLocaleDateString("fr-FR", optionsDay);
+    
+            // Date complète en chiffres
+            var optionsDate = { day: '2-digit', month: '2-digit', year: 'numeric' };
+            var fullDate = today.toLocaleDateString("fr-FR", optionsDate);
+    
+            // Affichage avec saut de ligne
+            document.getElementById('date').innerHTML = dayName + "<br>" + fullDate;
+
+/* date sur une ligne
                 var options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
                 document.getElementById('date').innerHTML = today.toLocaleDateString("fr-FR", options);
+    */
                 }
 
 
