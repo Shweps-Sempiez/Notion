@@ -34,7 +34,7 @@ Definition d'une valeur en % en fonction d'une valeur qui se modifie regulièrem
 function progressionMois() {
                             let today = new Date();
                             let jour = today.getDate();
-                            let mois = today.getmonthe();
+                            let mois = today.getMonth();
                             let totalJours = new Date(today.getFullYear(), today.getMonth()+1, 0).getDate();  
 
                             let pourcentage = (jour / totalJours) * 100;
