@@ -11,7 +11,7 @@
 </head>
 <body>
 
-/* definition d'une valeur en % et rappel dans un script pour la modifier */
+/* definition d'une valeur en % et rappel dans un script pour la modifier (70=>30) */ <br>
 <div>
     <label for="file">File progress:<br></label>
     <progress id="file" max="100" value="70">70%</progress>
@@ -32,7 +32,8 @@
 <script>
 function progressionMois() {
                             let today = new Date();
-                            let jour = today.getDate();                   
+                            let jour = today.getDate();
+                            let mois = today.getmonthe();
                             let totalJours = new Date(today.getFullYear(), today.getMonth()+1, 0).getDate();  
 
                             let pourcentage = (jour / totalJours) * 100;
@@ -41,7 +42,7 @@ function progressionMois() {
                             document.getElementById("mois").value = pourcentage;
 
                             // Afficher le pourcentage arrondi à côté
-                            document.getElementById("mois-valeur").innerText = "test"+ Math.round(pourcentage) + "% du mois";
+                            document.getElementById("mois-valeur").innerText = "le "+jour+", on est a "+ Math.round(pourcentage) + "% du mois de" + mois;
                             }
 
 progressionMois();
