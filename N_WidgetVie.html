@@ -101,77 +101,11 @@ h1 {margin-top: 0;}
   </div>
 </div>
 
-<script>
-function date() {
-                var today = new Date();
 
-/* date sur 2 lignes*/
-            /* Jour de la semaine */
-            var optionsDay = { weekday: 'long' };
-            var dayName = today.toLocaleDateString("fr-FR", optionsDay);
-    
-/* date sous forme dd/mm/aaa
-            var optionsDate = { day: '2-digit', month: '2-digit', year: 'numeric' };
-            var fullDate = today.toLocaleDateString("fr-FR", optionsDate);
-*/
+<label for="file">File progress:</label>
 
-            var optionsDate = { day: 'numeric', month: 'long', year: 'numeric' };
-            var fullDate = today.toLocaleDateString("fr-FR", optionsDate);
-            // Affichage avec saut de ligne
-            document.getElementById('date').innerHTML = "Nous sommes <b><span style='font-size:2rem;'>" + dayName + "</span></b><br>Le " + fullDate;
+<progress id="file" max="100" value="70">70%</progress>
 
-/* date sur une ligne type Lundi jj/mm/aaaa
-            var options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
-            document.getElementById('date').innerHTML = today.toLocaleDateString("fr-FR", options);
-*/
-                }
-
-
-function clock() {
-                    var today = new Date();
-                    var hour = zeros(today.getHours());
-                /*  var hour = zeros(twelveHour(today.getHours()));    Si Heure sur 12h et non sur 24h (par defaut)     */
-                    var minutes = zeros(today.getMinutes());
-                    var seconds = zeros(today.getSeconds());
-                /*  if(today.getHours() >=12){seconds+=" pm"}
-                        else{seconds+=" am"}                          Si Heure sur 12h et non sur 24h (par defaut)    */
-                    hrs = today.getHours();
-    if (hrs < 14) 
-        Salutation = 'Bon Matin  ';
-    else if (hrs >= 14 && hrs <= 19)
-        Salutation = 'Bonne après-midi ';
-    else if (hrs >= 19 && hrs <= 24)
-        Salutation = 'Bonsoir  ';
-// console.log(today.toLocaleTimeString());
-document.getElementById('Salutation').innerHTML = Salutation;
-document.getElementById('hour').innerHTML = hour;
-document.getElementById('min').innerHTML = minutes;
-document.getElementById('sec').innerHTML = seconds;
-}
-
-/* 
-function twelveHour(hour)   {
-                            if (hour > 12) {return hour -= 12 } 
-                            else if (hour === 0) {return hour = 12;} 
-                            else {return hour}
-                            }
-Si Heure sur 12h et non sur 24h (par defaut)*/
-
-/* ajouter un zero devant le premier chiffre au besoin */
-function zeros(num) {
-                    if (num < 10) {num = '0' + num};
-                    return num;
-                    }
-
-function dateTime() {
-                    date();
-                    clock();
-                    setTimeout(dateTime, 500);
-                    }
-
-dateTime()
-// END
-</script>
 
 </body>
 </html>
