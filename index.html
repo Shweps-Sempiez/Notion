@@ -101,19 +101,21 @@ h1 {margin-top: 0;}
 <script>
 function date() {
                 var today = new Date();
+                var options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+                document.write(date.toLocaleDateString("fr-FR", options));
                 document.getElementById('date').innerHTML = today.toDateString();
                 }
 
 
 function clock() {
                 var today = new Date();
-         /*     var hour = zeros(twelveHour(today.getHours()));*/
-                var hour = zeros((today.getHours()));
-                var minutes = zeros(today.getMinutes());
+            /*  var hour = zeros(twelveHour(today.getHours()));   "code sur 12 h et non 24h"  */
+                var hour = zeros((today.getHours()));h et non 
+                var minutes = zeros(today.getMinutes()));
                 var seconds = zeros(today.getSeconds());
                 
 /*              if(today.getHours() >=12){seconds+=" pm"}
-                else{seconds+=" am"} */
+                else{seconds+=" am"}   "code sur 12 h et non 24h"  */
 
 hrs = today.getHours();
 if (hrs < 12)
