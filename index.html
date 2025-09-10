@@ -118,11 +118,11 @@ function date() {
             var optionsDate = { day: 'numeric', month: 'long', year: 'numeric' };
             var fullDate = today.toLocaleDateString("fr-FR", optionsDate);
             // Affichage avec saut de ligne
-            document.getElementById('date').innerHTML = dayName + "<br>" + fullDate;
+            document.getElementById('date').innerHTML = "Nous sommes <br>" + dayName + "<br> Le" + fullDate;
 
-/* date sur une ligne
-                var options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
-                document.getElementById('date').innerHTML = today.toLocaleDateString("fr-FR", options);
+/* date sur une ligne type Lundi jj/mm/aaaa
+            var options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+            document.getElementById('date').innerHTML = today.toLocaleDateString("fr-FR", options);
 */
                 }
 
@@ -156,7 +156,8 @@ function twelveHour(hour)   {
                             else {return hour}
                             }
 Si Heure sur 12h et non sur 24h (par defaut)*/
-/* adds zero infront of single digit number */
+
+/* ajouter un zero devant le premier chiffre au besoin */
 function zeros(num) {
                     if (num < 10) {num = '0' + num};
                     return num;
