@@ -139,17 +139,16 @@ Couleur du quart de barre<br>
     <br>
 Couleur de la barre des mois<br>
 # 3F51B5<br>
+    <progress id="Mois" max="100" value="70">70%</progress><br>
 <script>
 function progressionMois() {
-    let today = new Date();
-    let jour = today.getDate();                   // numéro du jour (1 → 31)
-    let totalJours = new Date(today.getFullYear(), today.getMonth()+1, 0).getDate();  
-    // nombre de jours dans le mois en cours
-
-    let pourcentage = (jour / totalJours) * 100;
-
-    document.getElementById("mois").value = pourcentage;
-}
+                            let today = new Date();
+                            let jour = today.getDate();                   // numéro du jour (1 → 31)
+                            let totalJours = new Date(today.getFullYear(), today.getMonth()+1, 0).getDate();  
+                            // nombre de jours dans le mois en cours
+                            let pourcentage = (jour / totalJours) * 100;
+                            document.getElementById("mois").value = pourcentage;
+                            }
 
 progressionMois();
 </script>    <br>
