@@ -11,7 +11,7 @@
     <style>
 /*CSS RESETS*/
 body{
-    background-color: #00ff00;
+    background-color: #fff;
     line-height: 1.6;
     }
 
@@ -33,7 +33,7 @@ h1 {margin-top: 0;}
 .card   {
         padding: 10px 25px 10px 25px;
         border-radius: 10px;
-        background: #009688;
+        background: #00ff00;
         color: #fff;
         display: inline-block;
         box-shadow: 2px 2px 1px 0px #295C7B;
@@ -118,7 +118,7 @@ function date() {
             var optionsDate = { day: 'numeric', month: 'long', year: 'numeric' };
             var fullDate = today.toLocaleDateString("fr-FR", optionsDate);
             // Affichage avec saut de ligne
-            document.getElementById('date').innerHTML = "Nous sommes <b>" + dayName + "</b><br> Le" + fullDate;
+            document.getElementById('date').innerHTML = "Nous sommes <b>" + dayName + "</b><br>Le " + fullDate;
 
 /* date sur une ligne type Lundi jj/mm/aaaa
             var options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
