@@ -26,9 +26,9 @@
 <br>
 <br>
 
-Definition d'une valeur en % en fonction d'une valeur qui se modifie regulièrement (chaque jour) <br>
-<progress id="mois" max="100" value="0"></progress>
-<span id="mois-valeur"></span><br>
+<div>Definition d'une valeur en % en fonction d'une valeur qui se modifie regulièrement (chaque jour) </div>
+<div><progress id="mois" max="100" value="0"></progress></div>
+<div><span id="mois-valeur"></span></div>
 
 <script>
 function progressionMois() {
@@ -42,7 +42,7 @@ function progressionMois() {
                             document.getElementById("mois").value = pourcentage;
 
                             // Afficher le pourcentage arrondi à côté
-                            document.getElementById("mois-valeur").innerText = "<br>le "+jour+", on est a "+ Math.round(pourcentage) + "% du mois de " + mois;
+                            document.getElementById("mois-valeur").innerText = "Le "+jour+", on est a "+ Math.round(pourcentage) + "% du mois de " + mois;
                             }
 
 progressionMois();
