@@ -34,8 +34,10 @@ Definition d'une valeur en % en fonction d'une valeur qui se modifie regulièrem
 function progressionMois() {
                             let today = new Date();
                             let jour = today.getDate();
-                            let mois = today.getMonth();
-                            let totalJours = new Date(today.getFullYear(), today.getMonth()+1, 0).getDate();  
+                            let mois = today.getMonth()+1;
+                            let totalJours = new Date(today.getFullYear(), mois, 0).getDate(); 
+                            var optionsMois = { mois : 'long' };
+                            var MoisLong = today.toLocaleDateString("fr-FR", optionsMois);
 
                             let pourcentage = (jour / totalJours) * 100;
 
@@ -43,7 +45,7 @@ function progressionMois() {
                             document.getElementById("mois").value = pourcentage;
 
                             // Afficher le pourcentage arrondi à côté
-                            document.getElementById("mois-valeur").innerText = "le "+jour+", on est a "+ Math.round(pourcentage) + "% du mois de" + mois;
+                            document.getElementById("mois-valeur").innerText = "le "+jour+", on est a "+ Math.round(pourcentage) + "% du mois de" + MoiLong;
                             }
 
 progressionMois();
