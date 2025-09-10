@@ -106,14 +106,17 @@ function date() {
                 var today = new Date();
 
 /* date sur 2 lignes*/
-            // Jour de la semaine
+            /* Jour de la semaine */
             var optionsDay = { weekday: 'long' };
             var dayName = today.toLocaleDateString("fr-FR", optionsDay);
     
-            // Date complète en chiffres
+/* date sous forme dd/mm/aaa
             var optionsDate = { day: '2-digit', month: '2-digit', year: 'numeric' };
             var fullDate = today.toLocaleDateString("fr-FR", optionsDate);
-    
+*/
+
+            var optionsDate = { day: 'long', month: 'long', year: 'numeric' };
+            var fullDate = today.toLocaleDateString("fr-FR", optionsDate);
             // Affichage avec saut de ligne
             document.getElementById('date').innerHTML = dayName + "<br>" + fullDate;
 
