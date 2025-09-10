@@ -37,6 +37,8 @@ function progressionMois() {
                             let mois = today.getMonth()+1;
                             let totalJours = new Date(today.getFullYear(), mois, 0).getDate(); 
                             let pourcentage = (jour / totalJours) * 100;
+
+                             var optionsMois = { month: 'long' };
                             let MoisLong= mois ;
 
                             // Mettre à jour la barre
