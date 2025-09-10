@@ -107,6 +107,15 @@ h1 {margin-top: 0;}
 <br>
 Personnaliser :<br>
     <br>
+
+<script>
+  // Récupérer la barre
+  let barre = document.getElementById("file");
+
+  // Exemple : mettre la valeur à 30
+  barre.value = 30;
+</script>
+    
 Date de naissance :<br>
 16/01/1981<br>
     <br>
@@ -130,7 +139,20 @@ Couleur du quart de barre<br>
     <br>
 Couleur de la barre des mois<br>
 # 3F51B5<br>
-    <br>
+<script>
+function progressionMois() {
+    let today = new Date();
+    let jour = today.getDate();                   // numéro du jour (1 → 31)
+    let totalJours = new Date(today.getFullYear(), today.getMonth()+1, 0).getDate();  
+    // nombre de jours dans le mois en cours
+
+    let pourcentage = (jour / totalJours) * 100;
+
+    document.getElementById("mois").value = pourcentage;
+}
+
+progressionMois();
+</script>    <br>
 Couleur de la barre de semaine <br>
 # 7E57C2<br>
     <br>
