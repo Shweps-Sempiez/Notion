@@ -36,15 +36,13 @@ function progressionMois() {
                             let jour = today.getDate();
                             let mois = today.getMonth()+1;
                             let totalJours = new Date(today.getFullYear(), mois, 0).getDate(); 
-                           
-
                             let pourcentage = (jour / totalJours) * 100;
 
                             // Mettre à jour la barre
                             document.getElementById("mois").value = pourcentage;
 
                             // Afficher le pourcentage arrondi à côté
-                            document.getElementById("mois-valeur").innerText = "le "+jour+", on est a "+ Math.round(pourcentage) + "% du mois de " + Mois;
+                            document.getElementById("mois-valeur").innerText = "le "+jour+", on est a "+ Math.round(pourcentage) + "% du mois de " + mois;
                             }
 
 progressionMois();
