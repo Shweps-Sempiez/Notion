@@ -104,7 +104,8 @@ h1 {margin-top: 0;}
 <script>
 function date() {
                 var today = new Date();
-                document.getElementById('date').innerHTML = today.toLocaleDateString("fr-FR");
+                var options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+                document.getElementById('date').innerHTML = today.toLocaleDateString("fr-FR", options);
                 }
 
 
