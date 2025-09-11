@@ -17,7 +17,7 @@
   height: 30px;         /* hauteur totale de la barre */
 }
 
-.progress-bar {            /*la partie colorée qui grandit en largeur en fonction du pourcentage */
+.progress-barre {          /*la partie colorée qui grandit en largeur en fonction du pourcentage */
   height: 100%;            /* occupe toute la hauteur du conteneur */
   background: #4caf50;     /* couleur de la barre de progression (vert) */
   text-align: center;      /* centre le texte horizontalement à l’intérieur */
@@ -39,24 +39,24 @@
 <body>
 
 <div class="progress-container">
-  <div class="progress-bar" id="mois-bar">
-    <span id="Mois-Pourcent"></span>
+  <div class="progress-barre" id="MoisBarre">
+    <span id="MoisPourcent"></span>
   </div>
 </div>
-<div><span id="Mois-Texte"></span></div>
+<div><span id="MoisTexte"></span></div>
     
 <script>
-function progressionMois() {
+function ProgressionMois() {
                               let today = new Date();
                               let totalJours = new Date(today.getFullYear(), today.getMonth() + 1, 0).getDate(); 
                               let pourcentage = (today.getDate() / totalJours) * 100;
                               let MoisLong = today.toLocaleDateString('fr-FR', { month: 'long' });
-                              let bar = document.getElementById("mois-bar");
+                              let bar = document.getElementById("MoisBarre");
                               bar.style.width = pourcentage + "%";
-                              document.getElementById("Mois-Pourcent").innerText = 
+                              document.getElementById("MoisPourcent").innerText = 
                                       `${Math.round(pourcentage)} % de ${MoisLong}`;
-                             document.getElementById("Mois-Texte").innerText =                                   
+                             document.getElementById("MoisTexte").innerText =                                   
                                     `Le ${today.getDate()}, on est à ${Math.round(pourcentage)}% du mois de ${MoisLong}`;
                             }
-progressionMois();
+ProgressionMois();
 </script>
