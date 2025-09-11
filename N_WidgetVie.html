@@ -10,23 +10,22 @@
 
     <style>
 .progress-container {
-                      width: 100%;
-                      background: #eee;
-                      border-radius: 10px;
-                      overflow: hidden;
-                      height: 30px;
+                      width: 100%; /**/
+                      background: #eee; /**/
+                      border-radius: 10px; /**/
+                      overflow: hidden; /**/
+                      height: 30px; /**/
                     }
 
 .progress-bar {
               height: 100%;
-              background: #4caf50;
-              text-align: center;
+              background: #4caf50; /**/
+              text-align: center; /**/
               line-height: 30px; /* centre le texte verticalement */
-              color: white;
-              font-weight: bold;
+              color: white; /**/
+              font-weight: bold; /**/
               width: 0%; /* sera ajusté en JS */
             }
-
     </style>
 </head>
 <body>
@@ -80,18 +79,13 @@ progressionMois();
 <script>
 function progressionMois() {
                               let today = new Date();
-                              let jour = today.getDate();
-                              let mois = today.getMonth();
-                              let totalJours = new Date(today.getFullYear(), mois + 1, 0).getDate(); 
-                              let pourcentage = (jour / totalJours) * 100;
-
-                              let optionsMois = { month: 'long' };
-                              let MoisLong = today.toLocaleDateString('fr-FR', optionsMois);
-
+                              let totalJours = new Date(today.getFullYear(), today.getMonth() + 1, 0).getDate(); 
+                              let pourcentage = (today.getDate() / totalJours) * 100;
+                              let MoisLong = today.toLocaleDateString('fr-FR', { month: 'long' });
                               let bar = document.getElementById("mois-bar");
                               bar.style.width = pourcentage + "%";
                               document.getElementById("mois-texte").innerText = 
-                              "Le " + jour + ", " + Math.round(pourcentage) + "% du mois de " + MoisLong;
+                              'Le ${today.getDate()}", " ${Math.round(pourcentage)} "% du mois de " + MoisLong;
                             }
 progressionMois();
 </script>
