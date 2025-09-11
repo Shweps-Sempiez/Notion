@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Progress Bar Export</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <h2>Barre de progression personnalisable</h2>
+
+  <div class="progress-container">
+    <div id="progress-bar" class="progress-bar">0%</div>
+  </div>
+
+  <div class="controls">
+    <label>
+      Pourcentage :
+      <input type="number" id="progress-input" min="0" max="100" value="50"> %
+    </label>
+    <br><br>
+    <label>
+      Couleur :
+      <input type="color" id="color-input" value="#4caf50">
+    </label>
+    <br><br>
+    <button id="update-btn">Mettre à jour</button>
+    <button id="export-url-btn">Exporter l'URL</button>
+    <button id="export-bar-btn">Exporter la barre</button>
+  </div>
+
+  <script>
+    const progressBar = document.getElementById('progress-bar');
+    const progressInput = document.getElementById('progress-input');
+    const colorInput = document.getElementById('color-input');
+    const updateBtn = document.getElementById('update-btn');
+    const exportUrlBtn = document.getElementById('export-url-btn');
+    const exportBarBtn = document.getElementById('export-bar-btn');
+
+    // Fonction pour mettre à jour la barre
+    function updateBar() {
+      const progress = progressInput.value;
+      const color = colorInput.value;
+
+      progressBar.style.width = progress + "%";
+      progressBar.textContent = progress + "%";
+      progressBar.style.backgroundColor = color;
+    }
+
+    updateBtn.addEventListener('click', updateBar);
+
+    // Exporter l'URL
+    exportUrlBtn.addEventListener('click', () => {
+      const progress = progressInput.value;
+      const color = colorInput.value.replace("#", "");
+
+      const url = window.location.origin + window.location.pathname +
+                  `?progress=${progress}&color=${color}`;
+
+      prompt("Voici l’URL de ta barre :", url);
+    });
+
+    // Exporter uniquement la barre (HTML minimal)
+    exportBarBtn.addEventListener('click', () => {
+      const barHTML = `
+<div class="progress-container">
+  <div class="progress-bar" style="width:${progressInput.value}%; background:${colorInput.value};">
+    ${progressInput.value}%
+  </div>
+</div>`;
+      prompt("Copie ce code HTML :", barHTML);
+    });
+
+    // Lire les paramètres URL au chargement
+    window.addEventListener('DOMContentLoaded', () => {
+      const params = new URLSearchParams(window.location.search);
+      const progress = params.get('progress');
+      const color = params.get('color');
+
+      if (progress !== null) {
+        progressInput.value = progress;
+      }
+      if (color !== null) {
+        colorInput.value = "#" + color;
+      }
+
+      updateBar();
+    });
+  </script>
+
+</body>
+</html>
+
