@@ -43,25 +43,25 @@ document.getElementById("choixCouleur").addEventListener("input", ProgressionMoi
 // EXPORT de la barre uniquement
 document.getElementById("export-btn").addEventListener("click", function() {
                                                                               let barreHTML = `
-                                                                                <div class="progress-container">
+                                                                                <div class="ProgressContainer">
                                                                                     <div class="progress-bar" id="mois-bar">
-                                                                                        <span id="mois-texte">${document.getElementById("mois-texte").innerText}
+                                                                                        <span id="MoisTexte">${document.getElementById("MoisTexte").innerText}
                                                                                         </span>
                                                                                     </div>
                                                                                 </div>
                                                                                 <div>
-                                                                                    <span id="mois-valeur">${document.getElementById("mois-valeur").innerText}
+                                                                                    <span id="MoisPourcent">${document.getElementById("MoisPourcent").innerText}
                                                                                     </span>
                                                                                 </div>
                                                                                 <style>
-                                                                                    .progress-container {
+                                                                                    .ProgressContainer {
                                                                                                           width: 50%;
                                                                                                           background: #eee;
                                                                                                           border-radius: 10px;
                                                                                                           overflow: hidden;
                                                                                                           height: 30px;
                                                                                                         }
-                                                                                    .progress-bar {
+                                                                                    .ProgressBarre {
                                                                                                   height: 100%;
                                                                                                   background: ${document.getElementById("choixCouleur").value};
                                                                                                   text-align: center;
@@ -70,7 +70,7 @@ document.getElementById("export-btn").addEventListener("click", function() {
                                                                                                   font-weight: bold;
                                                                                                   width: ${document.getElementById("mois-bar").style.width};
                                                                                                  }
-                                                                                    #mois-valeur {
+                                                                                    #MoisPourcent {
                                                                                                   margin-top: 8px;
                                                                                                   font-size: 14px;
                                                                                                   color: #333;
@@ -78,7 +78,7 @@ document.getElementById("export-btn").addEventListener("click", function() {
                                                                             </style>
 
                                                                             <script>
-                                                                                function progressionMois() {
+                                                                                function ProgressionMois() {
                                                                                   // pas besoin de recalcul ici si tu exportes l’état actuel
                                                                                                             }
                                                                             </script>
