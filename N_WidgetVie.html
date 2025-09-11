@@ -63,8 +63,59 @@ function ProgressionMois() {
                              document.getElementById("MoisTexte").innerText =                                   
                                     `Le ${today.getDate()}, on est à ${Math.round(pourcentage)}% du mois de ${MoisLong}`;
                             }
-// Quand on change la couleur → on relance la fonction
-document.getElementById("choixCouleur").addEventListener("input", ProgressionMois);
+ProgressionMois(); // Appel initial
+document.getElementById("choixCouleur").addEventListener("input", ProgressionMois); // Quand on change la couleur → on relance la fonction
 
-ProgressionMois();
+// EXPORT de la barre uniquement
+document.getElementById("export-btn").addEventListener("click", function() {
+                                                                              let barreHTML = `
+                                                                                <div class="progress-container">
+                                                                                    <div class="progress-bar" id="mois-bar">
+                                                                                        <span id="mois-texte">${document.getElementById("mois-texte").innerText}
+                                                                                        </span>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div>
+                                                                                    <span id="mois-valeur">${document.getElementById("mois-valeur").innerText}
+                                                                                    </span>
+                                                                                </div>
+                                                                                <style>
+                                                                                    .progress-container {
+                                                                                                          width: 50%;
+                                                                                                          background: #eee;
+                                                                                                          border-radius: 10px;
+                                                                                                          overflow: hidden;
+                                                                                                          height: 30px;
+                                                                                                        }
+                                                                                    .progress-bar {
+                                                                                                  height: 100%;
+                                                                                                  background: ${document.getElementById("choixCouleur").value};
+                                                                                                  text-align: center;
+                                                                                                  line-height: 30px;
+                                                                                                  color: white;
+                                                                                                  font-weight: bold;
+                                                                                                  width: ${document.getElementById("mois-bar").style.width};
+                                                                                                 }
+                                                                                    #mois-valeur {
+                                                                                                  margin-top: 8px;
+                                                                                                  font-size: 14px;
+                                                                                                  color: #333;
+                                                                                                }
+                                                                            </style>
+
+                                                                            <script>
+                                                                                function progressionMois() {
+                                                                                  // pas besoin de recalcul ici si tu exportes l’état actuel
+                                                                                                            }
+                                                                            </script>
+                                                                        `;
+
+                                                                          // Copier dans le presse-papiers
+                                                                          navigator.clipboard.writeText(barreHTML)
+                                                                            .then(() => alert("La barre a été copiée dans le presse-papiers !"))
+                                                                            .catch(err => alert("Erreur de copie : " + err));
+                                                                        }
+                                                            );
 </script>
+</body>
+</html>
