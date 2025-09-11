@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Progression du mois</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <h2>Progression du mois</h2>
+
+  <label for="color-input">Choisir la couleur :</label>
+  <input type="color" id="color-input" value="#4caf50">
+  <button id="export-btn">Exporter la barre</button>
+
+  <div class="progress-container">
+    <div id="progress-bar" class="progress-bar">0%</div>
+  </div>
+  <p id="progress-text"></p>
+
+  <script>
+    const progressBar = document.getElementById('progress-bar');
+    const progressText = document.getElementById('progress-text');
+    const colorInput = document.getElementById('color-input');
+    const exportBtn = document.getElementById('export-btn');
+
+    function updateBar() {
+      const today = new Date();
+      const totalDays = new Date(today.getFullYear(), today.getMonth() + 1, 0).getDate();
+      const percent = Math.round((today.getDate() / totalDays) * 100);
+      const monthName = today.toLocaleDateString('fr-FR', { month: 'long' });
+
+      progressBar.style.width = percent + "%";
+      progressBar.textContent = percent + "%";
+      progressBar.style.backgroundColor = colorInput.value;
+      progressText.textContent = `Le ${today.getDate()}, on est à ${percent}% du mois de ${monthName}`;
+    }
+
+    // Mise à jour initiale + couleur dynamique
+    updateBar();
+    colorInput.addEventListener('input', updateBar);
+
+    // Exporter page minimaliste contenant seulement la barre
+    exportBtn.addEventListener('click', () => {
+      const exportHTML = `
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Progression du mois</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="progress-container">
+    <div class="progress-bar" style="width:${progressBar.style.width}; background:${colorInput.value};">
+      ${progressBar.textContent}
+    </div>
+  </div>
+  <p>${progressText.textContent}</p>
+
+  <script>
+    (${updateBar.toString()})();
+  </script>
+</body>
+</html>`;
+      navigator.clipboard.writeText(exportHTML)
+        .then(() => alert("Page minimaliste copiée dans le presse-papiers !"))
+        .catch(err => alert("Erreur de copie : " + err));
+    });
+  </script>
+</body>
+</html>
