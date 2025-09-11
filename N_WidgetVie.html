@@ -42,27 +42,7 @@
 
     // Exporter page minimaliste contenant seulement la barre
     exportBtn.addEventListener('click', () => {
-      const exportHTML = `
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-  <meta charset="UTF-8">
-  <title>Progression du mois</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <div class="progress-container">
-    <div class="progress-bar" style="width:${progressBar.style.width}; background:${colorInput.value};">
-      ${progressBar.textContent}
-    </div>
-  </div>
-  <p>${progressText.textContent}</p>
-
-  <script>
-    (${updateBar.toString()})();
-  </script>
-</body>
-</html>`;
+      const exportHTML = `<!DOCTYPE html><html lang="fr"><head>  <meta charset="UTF-8"><title>Progression du mois</title><link rel="stylesheet" href="style.css"></head><body><div class="progress-container"><div class="progress-bar" style="width:${progressBar.style.width}; background:${colorInput.value};"> ${progressBar.textContent}</div></div><p>${progressText.textContent}</p><script>(${updateBar.toString()})();</script></body></html>`;
       navigator.clipboard.writeText(exportHTML)
         .then(() => alert("Page minimaliste copiée dans le presse-papiers !"))
         .catch(err => alert("Erreur de copie : " + err));
