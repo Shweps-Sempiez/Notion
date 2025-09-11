@@ -9,7 +9,7 @@
     <title>Widget Notion</title>
 
     <style>
-.progress-container {   /* la boîte grise arrondie qui sert de cadre */
+.ProgressContainer {    /* la boîte grise arrondie qui sert de cadre */
   width: 50%;           /* largeur de la barre (ici 50% de la largeur du parent) */
   background: #eee;     /* couleur de fond du conteneur (gris clair) */
   border-radius: 10px;  /* arrondit les coins du conteneur */
@@ -17,7 +17,7 @@
   height: 30px;         /* hauteur totale de la barre */
 }
 
-.progress-barre {          /*la partie colorée qui grandit en largeur en fonction du pourcentage */
+.ProgressBarre {           /*la partie colorée qui grandit en largeur en fonction du pourcentage */
   height: 100%;            /* occupe toute la hauteur du conteneur */
   background: #4caf50;     /* couleur de la barre de progression (vert) */
   text-align: center;      /* centre le texte horizontalement à l’intérieur */
@@ -38,8 +38,8 @@
 </head>
 <body>
 
-<div class="progress-container">
-  <div class="progress-barre" id="MoisBarre">
+<div class="ProgressContainer">
+  <div class="Progress-Barre" id="MoisBarre">
     <span id="MoisPourcent"></span>
   </div>
 </div>
