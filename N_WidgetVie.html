@@ -28,7 +28,6 @@
   width: 0%;               /* largeur initiale (sera mise à jour en JavaScript selon % de progression) */
 }
 
-
 #MoisTexte {
   margin-top: 8px;     /* petit espace au-dessus pour éviter que ça colle */
   font-size: 20px;     /* taille du texte */
@@ -38,6 +37,10 @@
     </style>
 </head>
 <body>
+
+<!-- Sélecteur de couleur -->
+<label for="choixCouleur">Choisis une couleur :</label>
+<input type="color" id="choixCouleur" value="#4caf50">
 
 <div class="ProgressContainer">
   <div class="ProgressBarre" id="MoisBarre">
@@ -54,10 +57,14 @@ function ProgressionMois() {
                               let MoisLong = today.toLocaleDateString('fr-FR', { month: 'long' });
                               let bar = document.getElementById("MoisBarre");
                               bar.style.width = pourcentage + "%";
+                              bar.style.background = document.getElementById("choixCouleur").value; // couleur choisie
                               document.getElementById("MoisPourcent").innerText = 
                                       `${Math.round(pourcentage)} % de ${MoisLong}`;
                              document.getElementById("MoisTexte").innerText =                                   
                                     `Le ${today.getDate()}, on est à ${Math.round(pourcentage)}% du mois de ${MoisLong}`;
                             }
+// Quand on change la couleur → on relance la fonction
+document.getElementById("choixCouleur").addEventListener("input", progressionMois);
+
 ProgressionMois();
 </script>
