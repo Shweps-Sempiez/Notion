@@ -95,8 +95,12 @@ function progressionMois() {
                               bar.style.width = pourcentage + "%";
                               document.getElementById("mois-texte").innerText = 
                                       `${Math.round(pourcentage)} % de ${MoisLong}`;
-                              document.getElementById("mois-valeur").innerText =                                   
-                                    `Le ${today.getDate()}, on est à ${Math.round(pourcentage)}% du mois de ${MoisLong}`;
+                              /* TEST avec alert */
+  alert(`Le ${today.getDate()}, on est à ${Math.round(pourcentage)}% du mois de ${MoisLong}`);
+
+/*Ligne définitive (à remettre après test)
+ document.getElementById("mois-valeur").innerText =                                   
+                                    `Le ${today.getDate()}, on est à ${Math.round(pourcentage)}% du mois de ${MoisLong}`; */
                             }
 progressionMois();
 </script>
