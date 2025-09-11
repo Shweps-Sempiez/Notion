@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Pages internes</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0; padding: 0;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      height: 100vh;
+    }
+    .page {
+      display: none;
+      width: 100%; height: 100%;
+      align-items: center; justify-content: center;
+      font-size: 2em;
+      color: white;
+    }
+    #bonjour { background: steelblue; }
+    #aurevoir { background: seagreen; }
+    .buttons {
+      position: fixed; top: 10px; left: 10px;
+    }
+    button {
+      margin: 5px; padding: 8px 12px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="buttons">
+    <button onclick="copyLink('bonjour')">Copier lien Bonjour</button>
+    <button onclick="copyLink('aurevoir')">Copier lien Au revoir</button>
+  </div>
+
+  <div id="bonjour" class="page">Bonjour</div>
+  <div id="aurevoir" class="page">Au revoir</div>
+
+  <script>
+    // Lire le paramètre d’URL
+    const params = new URLSearchParams(window.location.search);
+    const page = params.get("page");
+
+    if(page === "bonjour") {
+      document.getElementById("bonjour").style.display = "flex";
+    } else if(page === "aurevoir") {
+      document.getElementById("aurevoir").style.display = "flex";
+    }
+
+    // Fonction pour générer et copier le lien
+    function copyLink(pageName) {
+      const url = window.location.origin + window.location.pathname + "?page=" + pageName;
+      navigator.clipboard.writeText(url).then(() => {
+        alert("Lien copié : " + url);
+      });
+    }
+  </script>
+</body>
+</html>
