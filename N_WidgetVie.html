@@ -44,7 +44,6 @@
   barre.value = 30;
 </script>
 <br>
-<br>
 
 <div>Définition d'une valeur en % en fonction d'une valeur qui se modifie regulièrement (chaque jour) </div>
 <div><progress id="mois" max="100" value="0"></progress></div>
@@ -94,6 +93,7 @@ function progressionMois() {
                               document.getElementById("mois-texte").innerText = 
                               "Le " + jour + ", " + Math.round(pourcentage) + "% du mois de " + MoisLong;
                             }
+progressionMois();
 </script>
     
 </body>
