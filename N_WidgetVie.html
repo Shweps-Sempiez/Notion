@@ -44,7 +44,52 @@ ProgressionMois(); // Appel initial
 document.getElementById("ChoixCouleur").addEventListener("input", ProgressionMois); // Quand on change la couleur → on relance la fonction
 
 // EXPORT de la barre uniquement
+document.getElementById("export-btn").addEventListener("click", function() {
+                                                                              let barreHTML = `
+                                                                                <div class="ProgressContainer">
+                                                                                    <div class="ProgressBarre" id="MoisBarre">
+                                                                                        <span id="MoisPourcent">${document.getElementById("MoisPourcent").innerText}</span>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div>
+                                                                                    <span id="MoisTexte">${document.getElementById("MoisTexte").innerText}</span>
+                                                                                </div>
+                                                                                <style>
+                                                                                    .ProgressContainer {
+                                                                                                          width: 50%;
+                                                                                                          background: #eee;
+                                                                                                          border-radius: 10px;
+                                                                                                          overflow: hidden;
+                                                                                                          height: 30px;
+                                                                                                        }
+                                                                                    .ProgressBarre {
+                                                                                                  height: 100%;
+                                                                                                  background: ${document.getElementById("ChoixCouleur").value};
+                                                                                                  text-align: center;
+                                                                                                  line-height: 30px;
+                                                                                                  color: white;
+                                                                                                  font-weight: bold;
+                                                                                                  width: ${document.getElementById("MoisBarre").style.width};
+                                                                                                 }
+                                                                                    #MoisPourcent {
+                                                                                                  margin-top: 8px;
+                                                                                                  font-size: 14px;
+                                                                                                  color: #333;
+                                                                                                }
+                                                                            </style>
 
+                                                                            <script>
+                                                                                function ProgressionMois() {
+                                                                                  // pas besoin de recalcul ici si tu exportes l’état actuel
+                                                                                                            }
+                                                                            </script>
+                                                                        `;
+
+                                                                          // Copier dans le presse-papiers
+                                                                          navigator.clipboard.writeText(barreHTML)
+                                                                            .then(() => alert("La barre a été copiée dans le presse-papiers !"))
+                                                                            .catch(err => alert("Erreur de copie : " + err));
+});
 </script>
 </body>
 </html>
