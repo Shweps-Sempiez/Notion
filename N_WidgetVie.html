@@ -75,7 +75,8 @@ progressionMois();
     <span id="mois-texte"></span>
   </div>
 </div>
-
+<div><span id="mois-valeur"></span></div>
+    
 <script>
 function progressionMois() {
                               let today = new Date();
@@ -85,7 +86,9 @@ function progressionMois() {
                               let bar = document.getElementById("mois-bar");
                               bar.style.width = pourcentage + "%";
                               document.getElementById("mois-texte").innerText = 
-                              `Le ${today.getDate()}, ${Math.round(pourcentage)} % du mois de ${MoisLong}`;
+                                      `${Math.round(pourcentage)} % de ${MoisLong}`;
+                              document.getElementById("mois-valeur").innerText =                                   
+                                    `Le ${today.getDate()}, on est à ${Math.round(pourcentage)}% du mois de ${MoisLong}`;
                             }
 progressionMois();
 </script>
