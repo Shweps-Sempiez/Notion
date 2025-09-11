@@ -8,10 +8,30 @@
     <meta name="google" content="notranslate">
     <title>Widget Notion</title>
 
+    <Style>
+.progress-container {
+                      width: 100%;
+                      background: #eee;
+                      border-radius: 10px;
+                      overflow: hidden;
+                      height: 30px;
+                    }
+
+.progress-bar {
+              height: 100%;
+              background: #4caf50;
+              text-align: center;
+              line-height: 30px; /* centre le texte verticalement */
+              color: white;
+              font-weight: bold;
+              width: 0%; /* sera ajusté en JS */
+            }
+
+    </Style>
 </head>
 <body>
 
-/* definition d'une valeur en % et rappel dans un script pour la modifier (70=>30) */ <br>
+<div>Définition d'une valeur en % et rappel dans un script pour la modifier (70=>30) */ </div>
 <div>
     <label for="file">File progress:<br></label>
     <progress id="file" max="100" value="70">70%</progress>
@@ -26,7 +46,7 @@
 <br>
 <br>
 
-<div>Definition d'une valeur en % en fonction d'une valeur qui se modifie regulièrement (chaque jour) </div>
+<div>Définition d'une valeur en % en fonction d'une valeur qui se modifie regulièrement (chaque jour) </div>
 <div><progress id="mois" max="100" value="0"></progress></div>
 <div><span id="mois-valeur"></span></div>
 
@@ -51,5 +71,30 @@ function progressionMois() {
 progressionMois();
 </script>
 
+<div>Ecriture d'une valeur en % dans et a coté de la barre </div>
+<div class="progress-container">
+  <div class="progress-bar" id="mois-bar">
+    <span id="mois-texte"></span>
+  </div>
+</div>
+
+<script>
+function progressionMois() {
+                              let today = new Date();
+                              let jour = today.getDate();
+                              let mois = today.getMonth();
+                              let totalJours = new Date(today.getFullYear(), mois + 1, 0).getDate(); 
+                              let pourcentage = (jour / totalJours) * 100;
+
+                              let optionsMois = { month: 'long' };
+                              let MoisLong = today.toLocaleDateString('fr-FR', optionsMois);
+
+                              let bar = document.getElementById("mois-bar");
+                              bar.style.width = pourcentage + "%";
+                              document.getElementById("mois-texte").innerText = 
+                              "Le " + jour + ", " + Math.round(pourcentage) + "% du mois de " + MoisLong;
+                            }
+</script>
+    
 </body>
 </html>
