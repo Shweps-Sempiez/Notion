@@ -13,8 +13,8 @@
 <body>
 
 <!-- Sélecteur de couleur -->
-<label for="choixCouleur">Couleur pour la barre "Mois":</label>
-<input type="color" id="choixCouleur" value="#4caf50">
+<label for="ChoixCouleur">Couleur pour la barre "Mois":</label>
+<input type="color" id="ChoixCouleur" value="#4caf50">
 
 <div id="BarreContainer">
     <div class="ProgressContainer">
@@ -34,14 +34,14 @@ function ProgressionMois() {
                               let MoisLong = today.toLocaleDateString('fr-FR', { month: 'long' });
                               let bar = document.getElementById("MoisBarre");
                               bar.style.width = pourcentage + "%";
-                              bar.style.background = document.getElementById("choixCouleur").value; // couleur choisie
+                              bar.style.background = document.getElementById("ChoixCouleur").value; // couleur choisie
                               document.getElementById("MoisPourcent").innerText = 
                                       `${Math.round(pourcentage)} % de ${MoisLong}`;
                              document.getElementById("MoisTexte").innerText =                                   
                                     `Le ${today.getDate()}, on est à ${Math.round(pourcentage)}% du mois de ${MoisLong}`;
                             }
 ProgressionMois(); // Appel initial
-document.getElementById("choixCouleur").addEventListener("input", ProgressionMois); // Quand on change la couleur → on relance la fonction
+document.getElementById("ChoixCouleur").addEventListener("input", ProgressionMois); // Quand on change la couleur → on relance la fonction
 
 // EXPORT de la barre uniquement
 document.getElementById("export-btn").addEventListener("click", function() {
@@ -64,7 +64,7 @@ document.getElementById("export-btn").addEventListener("click", function() {
                                                                                                         }
                                                                                     .ProgressBarre {
                                                                                                   height: 100%;
-                                                                                                  background: ${document.getElementById("choixCouleur").value};
+                                                                                                  background: ${document.getElementById("ChoixCouleur").value};
                                                                                                   text-align: center;
                                                                                                   line-height: 30px;
                                                                                                   color: white;
