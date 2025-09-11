@@ -54,7 +54,7 @@
 
 <div>Définition d'une valeur en % en fonction d'une valeur qui se modifie regulièrement (chaque jour) </div>
 <div><progress id="mois" max="100" value="0"></progress></div>
-<div><span id="mois-valeur"></span></div>
+<div><span id="mois-valeur1"></span></div>
 
 <script>
 function progressionMois() {
@@ -69,7 +69,7 @@ function progressionMois() {
                             document.getElementById("mois").value = pourcentage;
 
                             // Afficher le pourcentage arrondi à côté
-                            document.getElementById("mois-valeur").innerText = 
+                            document.getElementById("mois-valeur1").innerText = 
                                     //Entourer la chaîne avec des backticks ` `, pour eviter le + à repetition et utiliser les template string
                                     `Le ${today.getDate()}, on est à ${Math.round(pourcentage)}% du mois de ${MoisLong}`;
                             }
@@ -77,6 +77,7 @@ function progressionMois() {
 progressionMois();
 </script>
 <br>
+    
 <div>Ecriture d'une valeur en % dans, et à coté, de la barre </div>
 <div class="progress-container">
   <div class="progress-bar" id="mois-bar">
@@ -96,9 +97,9 @@ function progressionMois() {
                               document.getElementById("mois-texte").innerText = 
                                       `${Math.round(pourcentage)} % de ${MoisLong}`;
                               /* TEST avec alert */
-  alert(`Le ${today.getDate()}, on est à ${Math.round(pourcentage)}% du mois de ${MoisLong}`);
+                                  alert(`ceci est une alert`);
 
-/*Ligne définitive (à remettre après test)
+                            /*Ligne définitive (à remettre après test)
  document.getElementById("mois-valeur").innerText =                                   
                                     `Le ${today.getDate()}, on est à ${Math.round(pourcentage)}% du mois de ${MoisLong}`; */
                             }
