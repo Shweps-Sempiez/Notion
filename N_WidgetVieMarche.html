@@ -9,8 +9,8 @@
 
   <h2>Barre de progression personnalisable</h2>
 
-  <div class="ProgressContainer">
-    <div id="ProgressBarre" class="ProgressBarre">0%</div>
+  <div class="Progress_Container">
+    <div id="Progress_Barre" class="ProgressBarre">0%</div>
   </div>
 
   <div class="controls">
@@ -60,8 +60,8 @@
     // Exporter uniquement la barre (HTML minimal)
     exportBarBtn.addEventListener('click', () => {
                                                   const barHTML = `
-                                                      <div class="progress-container">
-                                                        <div class="ProgressBarre" style="width:${progressInput.value}%; background:${colorInput.value};">
+                                                      <div class="Progress_Container">
+                                                        <div class="Progress_Barre" style="width:${progressInput.value}%; background:${colorInput.value};">
                                                           ${progressInput.value}%
                                                         </div>
                                                       </div>`;
