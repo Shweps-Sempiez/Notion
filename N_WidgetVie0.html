@@ -33,8 +33,8 @@
 <script>
 function progressionMois() {
                             let AujourDHui = new Date();
-                            let totalJours = new Date(AujourDHui.getFullYear(), today.getMonth()+1, 0).getDate();  
-                            let pourcentage = (AujourDHui.getDate() / totalJours) * 100;
+                            let TotalJours = new Date(AujourDHui.getFullYear(), today.getMonth()+1, 0).getDate();  
+                            let pourcentage = (AujourDHui.getDate() / TotalJours) * 100;
 
                             // Obtenir le mois en toutes lettres (français)
                             let MoisLong = AujourDHui.toLocaleDateString("fr-FR", { month: 'long' });
@@ -63,8 +63,8 @@ progressionMois();
 <script>
 function progressionMois() {
                               let AujourDHui = new Date();
-                              let totalJours = new Date(AujourDHui.getFullYear(), today.getMonth() + 1, 0).getDate(); 
-                              let pourcentage = (AujourDHui.getDate() / totalJours) * 100;
+                              let TotalJours = new Date(AujourDHui.getFullYear(), today.getMonth() + 1, 0).getDate(); 
+                              let pourcentage = (AujourDHui.getDate() / TotalJours) * 100;
                               let MoisLong = today.toLocaleDateString('fr-FR', { month: 'long' });
                               let bar = document.getElementById("Mois-Barre");
                               bar.style.width = pourcentage + "%";
