@@ -51,14 +51,12 @@
 
     // Exporter l'URL
     exportUrlBtn.addEventListener('click', () => {
-      const progress = progressInput.value;
-      const color = colorInput.value.replace("#", "");
-
-      const url = window.location.origin + window.location.pathname +
-                  `?progress=${progress}&color=${color}`;
-
-      prompt("Voici l’URL de ta barre :", url);
-    });
+                                                  const progress = progressInput.value;
+                                                  const color = colorInput.value.replace("#", "");
+                                                  const url = window.location.origin + window.location.pathname +
+                                                            `?progress=${progress}&color=${color}`;
+                                                  prompt("Voici l’URL de ta barre :", url);
+                                                  });
 
     // Exporter uniquement la barre (HTML minimal)
     exportBarBtn.addEventListener('click', () => {
@@ -77,12 +75,8 @@
       const progress = params.get('progress');
       const color = params.get('color');
 
-      if (progress !== null) {
-        progressInput.value = progress;
-      }
-      if (color !== null) {
-        colorInput.value = "#" + color;
-      }
+      if (progress !== null) {progressInput.value = progress;}
+      if (color !== null)    {colorInput.value = "#" + color;}
 
       updateBar();
     });
