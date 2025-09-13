@@ -31,7 +31,7 @@ ProgressionMois1();
 
 <div>Définition d'une valeur en % en fonction d'une valeur qui se modifie regulièrement (chaque jour) </div>
 <div><progress id="Mois" max="100" value="0"></progress></div>
-<div><span id="Mois-Valeur"></span></div>
+<div><span id="Mois-Valeur2"></span></div>
 
 <script>
 function ProgressionMois2() {
@@ -43,7 +43,7 @@ function ProgressionMois2() {
                     // Mettre à jour la barre
                             document.getElementById("Mois").value = Pourcentage;
                     // Afficher Pourcentage arrondi à côté
-                            document.getElementById("Mois-Valeur").innerText = 
+                            document.getElementById("Mois-Valeur2").innerText = 
                     //Entourer la chaîne avec des backticks ` `, pour eviter le + à repetition et utiliser les template string
                                     `Le ${AujourDHui.getDate()}, on est à ${Math.round(Pourcentage)}% du mois de ${MoisLong}`;
                             }
@@ -58,7 +58,7 @@ ProgressionMois2();
     <span id="Mois-Texte"></span>
   </div>
 </div>
-<div><span id="Mois-Valeur"></span></div>
+<div><span id="Mois-Valeur3"></span></div>
     
 <script>
 function ProgressionMois3() {
@@ -72,7 +72,7 @@ function ProgressionMois3() {
                                       `${Math.round(Pourcentage)} % de ${MoisLong}`;
     // TEST avec alert
   alert(`Le ${AujourDHui.getDate()}, on est à ${Math.round(Pourcentage)}% du mois de ${MoisLong}`);
-                              document.getElementById("Mois-Valeur").innerText = 
+                              document.getElementById("Mois-Valeur3").innerText = 
                                     `Le ${AujourDHui.getDate()}, on est à ${Math.round(Pourcentage)}% du mois de ${MoisLong}`;
                             }
 ProgressionMois3();
