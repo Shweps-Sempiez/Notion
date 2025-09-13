@@ -19,10 +19,13 @@
 </div>
 
 <script>
-                      // Récupérer la barre
+function ProgressionMois1() {
+                // Récupérer la barre
                       let Barre = document.getElementById("File");
-                      // Exemple : mettre la valeur à 30
+                // Exemple : mettre la valeur à 30
                       Barre.value = 30;
+                             }
+ProgressionMois1();
 </script>
 <br>
 
@@ -31,7 +34,7 @@
 <div><span id="Mois-Valeur"></span></div>
 
 <script>
-function progressionMois() {
+function ProgressionMois2() {
                             let AujourDHui = new Date();
                             let TotalJours = new Date(AujourDHui.getFullYear(), today.getMonth()+1, 0).getDate();  
                             let Pourcentage = (AujourDHui.getDate() / TotalJours) * 100;
@@ -45,7 +48,7 @@ function progressionMois() {
                                     `Le ${AujourDHui.getDate()}, on est à ${Math.round(Pourcentage)}% du mois de ${MoisLong}`;
                             }
 
-progressionMois();
+ProgressionMois2();
 </script>
 <br>
     
@@ -58,7 +61,7 @@ progressionMois();
 <div><span id="Mois-Valeur"></span></div>
     
 <script>
-function progressionMois() {
+function ProgressionMois3() {
                               let AujourDHui = new Date();
                               let TotalJours = new Date(AujourDHui.getFullYear(), today.getMonth() + 1, 0).getDate(); 
                               let Pourcentage = (AujourDHui.getDate() / TotalJours) * 100;
@@ -70,7 +73,7 @@ function progressionMois() {
                              document.getElementById("Mois-Valeur").innerText =                                   
                                     `Le ${today.getDate()}, on est à ${Math.round(Pourcentage)}% du mois de ${MoisLong}`;
                             }
-progressionMois();
+ProgressionMois3();
 </script>
     
 </body>
