@@ -26,15 +26,6 @@
             text-align: center;
             }
 
-.date   {
-        display: block;
-        min-width: 162px;
-        /* padding-right: 30px; */
-        /* border-right: 2px solid #295C7B; */
-        font-family: 'Roboto', sans-serif;
-        font-size: 1.2em;
-        }
-
     </style>
 </head>
 <body>
@@ -45,7 +36,7 @@
     
     <div class="Carte_Visite">
         <div class="Salutation" id="Salutation"></div>
-      <div class="date" id="date"></div>
+      <div class="Aff_Date" id="date"></div>
       <div class="Aff_Heure">
         <div class="Heure" id="hour"></div>
         <div class="Colonne">:</div>
@@ -59,7 +50,7 @@
 </div>
 
 <script>
-function date() {
+function FonctDate() {
                 var today = new Date();
 
 /* date sur 2 lignes*/
@@ -75,16 +66,16 @@ function date() {
             var optionsDate = { day: 'numeric', month: 'long', year: 'numeric' };
             var fullDate = today.toLocaleDateString("fr-FR", optionsDate);
             // Affichage avec saut de ligne
-            document.getElementById('date').innerHTML = "Nous sommes <b><span style='font-size:2rem;'>" + dayName + "</span></b><br>Le " + fullDate;
+            document.getElementById('Aff_Date').innerHTML = "Nous sommes <b><span style='font-size:2rem;'>" + dayName + "</span></b><br>Le " + fullDate;
 
 /* date sur une ligne type Lundi jj/mm/aaaa
             var options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
-            document.getElementById('date').innerHTML = today.toLocaleDateString("fr-FR", options);
+            document.getElementById('Aff_Date').innerHTML = today.toLocaleDateString("fr-FR", options);
 */
                 }
 
 
-function clock() {
+function FonctHeure() {
                     var today = new Date();
                     var hour = zeros(today.getHours());
                 /*  var hour = zeros(twelveHour(today.getHours()));    Si Heure sur 12h et non sur 24h (par defaut)     */
@@ -121,8 +112,8 @@ function zeros(num) {
                     }
 
 function dateTime() {
-                    date();
-                    clock();
+                    FonctDate();
+                    FonctHeure();
                     setTimeout(dateTime, 500);
                     }
 
