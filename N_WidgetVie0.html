@@ -38,9 +38,9 @@ function ProgressionMois2() {
                             let AujourDHui = new Date();
                             let TotalJours = new Date(AujourDHui.getFullYear(), AujourDHui.getMonth()+1, 0).getDate();  
                             let Pourcentage = (AujourDHui.getDate() / TotalJours) * 100;
-                            // Obtenir le mois en toutes lettres (français)
+                    // Obtenir le mois en toutes lettres (français)
                             let MoisLong = AujourDHui.toLocaleDateString("fr-FR", { month: 'long' });
-                     // Mettre à jour la barre
+                    // Mettre à jour la barre
                             document.getElementById("Mois").value = Pourcentage;
                     // Afficher Pourcentage arrondi à côté
                             document.getElementById("Mois-Valeur").innerText = 
