@@ -63,8 +63,8 @@ function progressionMois() {
                               let TotalJours = new Date(AujourDHui.getFullYear(), today.getMonth() + 1, 0).getDate(); 
                               let Pourcentage = (AujourDHui.getDate() / TotalJours) * 100;
                               let MoisLong = today.toLocaleDateString('fr-FR', { month: 'long' });
-                              let bar = document.getElementById("Mois-Barre");
-                              bar.style.width = Pourcentage + "%";
+                              let Barre = document.getElementById("Mois-Barre");
+                              Barre.style.width = Pourcentage + "%";
                               document.getElementById("Mois-Texte").innerText = 
                                       `${Math.round(Pourcentage)} % de ${MoisLong}`;
                              document.getElementById("Mois-Valeur").innerText =                                   
