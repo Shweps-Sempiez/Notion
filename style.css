@@ -25,6 +25,20 @@ h1 {margin-top: 0;}
   width: 0%;               /* largeur initiale (sera mise à jour en JavaScript selon % de progression) */
 }
 
+.CarteVisite   {
+                padding: 10px 25px 10px 25px;
+                border-radius: 10px;
+                background: #00ff00;
+                color: #fff;
+                display: inline-block;
+                box-shadow: 2px 2px 1px 0px #295C7B;
+                }
+
+.CarteVisite:hover {
+                    margin-top: 2px;
+                    box-shadow: none;
+                    }
+
 #MoisTexte {
   margin-top: 8px;     /* petit espace au-dessus pour éviter que ça colle */
   font-size: 20px;     /* taille du texte */
