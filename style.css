@@ -1,8 +1,8 @@
 /*CSS RESETS*/
-body{
-    background-color: #fff;
-    line-height: 1.6;
-    }
+body {
+  background-color: #fff;
+  line-height: 1.6;
+     }
 
 h1 {margin-top: 0;}
 
@@ -12,7 +12,7 @@ h1 {margin-top: 0;}
   border-radius: 10px;  /* arrondit les coins du conteneur */
   overflow: hidden;     /* coupe ce qui dépasse (important pour garder les coins arrondis) */
   height: 30px;         /* hauteur totale de la barre */
-}
+                    }
 
 .ProgressBarre {           /*la partie colorée qui grandit en largeur en fonction du pourcentage */
   height: 100%;            /* occupe toute la hauteur du conteneur */
@@ -23,21 +23,46 @@ h1 {margin-top: 0;}
   color: white;            /* couleur du texte en blanc pour contraster avec le vert */
   font-weight: bold;       /* rend le texte en gras */
   width: 0%;               /* largeur initiale (sera mise à jour en JavaScript selon % de progression) */
-}
-
-.CarteVisite   {
-                padding: 10px 25px 10px 25px;
-                border-radius: 10px;
-                background: #00ff00;
-                color: #fff;
-                display: inline-block;
-                box-shadow: 2px 2px 1px 0px #295C7B;
                 }
 
-.CarteVisite:hover {
-                    margin-top: 2px;
-                    box-shadow: none;
-                    }
+.CarteVisite   {
+  padding: 10px 25px 10px 25px;
+  border-radius: 10px;
+  background: #00ff00;
+  color: #fff;
+  display: inline-block;
+  box-shadow: 2px 2px 1px 0px #295C7B;
+                }
+
+.CarteVisite:hover   {
+  margin-top: 2px;
+  box-shadow: none;
+                     }
+
+.ZoneWidget {
+  display: inline-block;
+  font-family: 'Roboto', sans-serif;
+  font-weight: bold;
+  font-size: 1.2em;
+  /* padding-left: 20px; */
+            }
+
+.Widget   {
+  display: inline-block;
+  min-width: 37px;
+          }
+
+.Colonne {
+  font-size: 1.1em;
+  display: inline-block;
+        }
+
+.Salutation {
+  min-width: 162px;
+  /* padding-right: 30px; */
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.2em;
+            }
 
 #MoisTexte {
   margin-top: 8px;     /* petit espace au-dessus pour éviter que ça colle */
