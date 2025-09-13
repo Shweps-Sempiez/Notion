@@ -32,12 +32,12 @@
 
 <script>
 function progressionMois() {
-                            let today = new Date();
-                            let totalJours = new Date(today.getFullYear(), today.getMonth()+1, 0).getDate();  
-                            let pourcentage = (today.getDate() / totalJours) * 100;
+                            let AujourDHui = new Date();
+                            let totalJours = new Date(AujourDHui.getFullYear(), today.getMonth()+1, 0).getDate();  
+                            let pourcentage = (AujourDHui.getDate() / totalJours) * 100;
 
                             // Obtenir le mois en toutes lettres (français)
-                            let MoisLong = today.toLocaleDateString("fr-FR", { month: 'long' });
+                            let MoisLong = AujourDHui.toLocaleDateString("fr-FR", { month: 'long' });
 
                             // Mettre à jour la barre
                             document.getElementById("Mois").value = pourcentage;
@@ -45,7 +45,7 @@ function progressionMois() {
                             // Afficher le pourcentage arrondi à côté
                             document.getElementById("Mois-Valeur").innerText = 
                                     //Entourer la chaîne avec des backticks ` `, pour eviter le + à repetition et utiliser les template string
-                                    `Le ${today.getDate()}, on est à ${Math.round(pourcentage)}% du mois de ${MoisLong}`;
+                                    `Le ${AujourDHui.getDate()}, on est à ${Math.round(pourcentage)}% du mois de ${MoisLong}`;
                             }
 
 progressionMois();
@@ -62,9 +62,9 @@ progressionMois();
     
 <script>
 function progressionMois() {
-                              let today = new Date();
-                              let totalJours = new Date(today.getFullYear(), today.getMonth() + 1, 0).getDate(); 
-                              let pourcentage = (today.getDate() / totalJours) * 100;
+                              let AujourDHui = new Date();
+                              let totalJours = new Date(AujourDHui.getFullYear(), today.getMonth() + 1, 0).getDate(); 
+                              let pourcentage = (AujourDHui.getDate() / totalJours) * 100;
                               let MoisLong = today.toLocaleDateString('fr-FR', { month: 'long' });
                               let bar = document.getElementById("Mois-Barre");
                               bar.style.width = pourcentage + "%";
