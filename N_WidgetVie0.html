@@ -44,7 +44,7 @@ function ProgressionMois2() {
                             document.getElementById("Mois").value = Pourcentage;
                     // Afficher Pourcentage arrondi à côté
                             document.getElementById("Mois-Valeur").innerText = 
-                                    //Entourer la chaîne avec des backticks ` `, pour eviter le + à repetition et utiliser les template string
+                    //Entourer la chaîne avec des backticks ` `, pour eviter le + à repetition et utiliser les template string
                                     `Le ${AujourDHui.getDate()}, on est à ${Math.round(Pourcentage)}% du mois de ${MoisLong}`;
                             }
 
@@ -71,7 +71,6 @@ function ProgressionMois3() {
                               document.getElementById("Mois-Texte").innerText = 
                                       `${Math.round(Pourcentage)} % de ${MoisLong}`;
                               document.getElementById("Mois-Valeur").innerText = 
-                                    //Entourer la chaîne avec des backticks ` `, pour eviter le + à repetition et utiliser les template string
                                     `Le ${AujourDHui.getDate()}, on est à ${Math.round(Pourcentage)}% du mois de ${MoisLong}`;
                             }
 ProgressionMois3();
