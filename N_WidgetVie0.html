@@ -54,11 +54,11 @@ progressionMois();
     
 <div>Ecriture d'une valeur en % dans, et à coté, de la barre </div>
 <div class="ProgressContainer">
-  <div class="ProgressBarre" id="MoisBarre">
-    <span id="MoisTexte"></span>
+  <div class="ProgressBarre" id="Mois-Barre">
+    <span id="Mois-Texte"></span>
   </div>
 </div>
-<div><span id="MoisValeur"></span></div>
+<div><span id="Mois-Valeur"></span></div>
     
 <script>
 function progressionMois() {
@@ -66,11 +66,11 @@ function progressionMois() {
                               let totalJours = new Date(today.getFullYear(), today.getMonth() + 1, 0).getDate(); 
                               let pourcentage = (today.getDate() / totalJours) * 100;
                               let MoisLong = today.toLocaleDateString('fr-FR', { month: 'long' });
-                              let bar = document.getElementById("MoisBarre");
+                              let bar = document.getElementById("Mois-Barre");
                               bar.style.width = pourcentage + "%";
-                              document.getElementById("MoisTexte").innerText = 
+                              document.getElementById("Mois-Texte").innerText = 
                                       `${Math.round(pourcentage)} % de ${MoisLong}`;
-                             document.getElementById("MoisValeur").innerText =                                   
+                             document.getElementById("Mois-Valeur").innerText =                                   
                                     `Le ${today.getDate()}, on est à ${Math.round(pourcentage)}% du mois de ${MoisLong}`;
                             }
 progressionMois();
