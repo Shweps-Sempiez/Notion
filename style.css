@@ -45,6 +45,18 @@ h1 {margin-top: 0;}
   display: inline-block;
         }
 
+.full-table {
+            display: table;
+            height: 100%;
+            width: 100%;
+            }
+
+.table-cell {
+            display: table-cell;
+            vertical-align: middle;
+            text-align: center;
+            }
+
 .Progress_Barre {           /*la partie colorée qui grandit en largeur en fonction du pourcentage */
   height: 100%;            /* occupe toute la hauteur du conteneur */
   background: #4caf50;     /* couleur de la barre de progression (vert) */
