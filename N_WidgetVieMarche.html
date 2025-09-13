@@ -39,13 +39,12 @@
 
     // Fonction pour mettre à jour la barre
     function updateBar() {
-      const progress = progressInput.value;
-      const color = colorInput.value;
-
-      progressBar.style.width = progress + "%";
-      progressBar.textContent = progress + "%";
-      progressBar.style.backgroundColor = color;
-    }
+                          const progress = progressInput.value;
+                          const color = colorInput.value;
+                          progressBar.style.width = progress + "%";
+                          progressBar.textContent = progress + "%";
+                          progressBar.style.backgroundColor = color;
+                          }
 
     updateBtn.addEventListener('click', updateBar);
 
@@ -60,28 +59,25 @@
 
     // Exporter uniquement la barre (HTML minimal)
     exportBarBtn.addEventListener('click', () => {
-      const barHTML = `
-<div class="progress-container">
-  <div class="ProgressBarre" style="width:${progressInput.value}%; background:${colorInput.value};">
-    ${progressInput.value}%
-  </div>
-</div>`;
-      prompt("Copie ce code HTML :", barHTML);
-    });
+                                                  const barHTML = `
+                                                      <div class="progress-container">
+                                                        <div class="ProgressBarre" style="width:${progressInput.value}%; background:${colorInput.value};">
+                                                          ${progressInput.value}%
+                                                        </div>
+                                                      </div>`;
+                                                  prompt("Copie ce code HTML :", barHTML);
+                                                });
 
     // Lire les paramètres URL au chargement
     window.addEventListener('DOMContentLoaded', () => {
-      const params = new URLSearchParams(window.location.search);
-      const progress = params.get('progress');
-      const color = params.get('color');
-
-      if (progress !== null) {progressInput.value = progress;}
-      if (color !== null)    {colorInput.value = "#" + color;}
-
-      updateBar();
-    });
+                                                        const params = new URLSearchParams(window.location.search);
+                                                        const progress = params.get('progress');
+                                                        const color = params.get('color');
+                                                        if (progress !== null) {progressInput.value = progress;}
+                                                        if (color !== null)    {colorInput.value = "#" + color;}
+                                                        updateBar();
+                                                      });
   </script>
 
 </body>
 </html>
-
