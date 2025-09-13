@@ -66,15 +66,13 @@ function FonctHeure() {
                         }
 
 // ajouter un zéro devant si besoin
-function zeros(num) {
-    return (num < 10 ? '0' : '') + num;
-}
+function zeros(num) {return (num < 10 ? '0' : '') + num;}
 
 function dateTime() {
                         FonctDate();
                         FonctHeure();
                         setTimeout(dateTime, 500);
-}
+                    }
 
 dateTime();
 </script>
