@@ -6,7 +6,7 @@ body {
 
 h1 {margin-top: 0;}
 
-.ProgressContainer {    /* la boîte grise arrondie qui sert de cadre */
+.Progress_Container {    /* la boîte grise arrondie qui sert de cadre */
   width: 50%;           /* largeur de la barre (ici 50% de la largeur du parent) */
   background: #eee;     /* couleur de fond du conteneur (gris clair) */
   border-radius: 10px;  /* arrondit les coins du conteneur */
@@ -14,7 +14,7 @@ h1 {margin-top: 0;}
   height: 30px;         /* hauteur totale de la barre */
                     }
 
-.ProgressBarre {           /*la partie colorée qui grandit en largeur en fonction du pourcentage */
+.Progress_Barre {           /*la partie colorée qui grandit en largeur en fonction du pourcentage */
   height: 100%;            /* occupe toute la hauteur du conteneur */
   background: #4caf50;     /* couleur de la barre de progression (vert) */
   text-align: center;      /* centre le texte horizontalement à l’intérieur */
@@ -25,7 +25,7 @@ h1 {margin-top: 0;}
   width: 0%;               /* largeur initiale (sera mise à jour en JavaScript selon % de progression) */
                 }
 
-.CarteVisite   {
+.Carte_Visite   {
   padding: 10px 25px 10px 25px;
   border-radius: 10px;
   background: #00ff00;
@@ -34,12 +34,12 @@ h1 {margin-top: 0;}
   box-shadow: 2px 2px 1px 0px #295C7B;
                 }
 
-.CarteVisite:hover   {
+.Carte_Visite:hover   {
   margin-top: 2px;
   box-shadow: none;
                      }
 
-.ZoneWidget {
+.Zone_Widget {
   display: inline-block;
   font-family: 'Roboto', sans-serif;
   font-weight: bold;
