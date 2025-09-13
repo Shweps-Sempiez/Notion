@@ -34,18 +34,15 @@
 function progressionMois() {
                             let AujourDHui = new Date();
                             let TotalJours = new Date(AujourDHui.getFullYear(), today.getMonth()+1, 0).getDate();  
-                            let pourcentage = (AujourDHui.getDate() / TotalJours) * 100;
-
+                            let Pourcentage = (AujourDHui.getDate() / TotalJours) * 100;
                             // Obtenir le mois en toutes lettres (français)
                             let MoisLong = AujourDHui.toLocaleDateString("fr-FR", { month: 'long' });
-
-                            // Mettre à jour la barre
-                            document.getElementById("Mois").value = pourcentage;
-
-                            // Afficher le pourcentage arrondi à côté
+                     // Mettre à jour la barre
+                            document.getElementById("Mois").value = Pourcentage;
+                    // Afficher Pourcentage arrondi à côté
                             document.getElementById("Mois-Valeur").innerText = 
                                     //Entourer la chaîne avec des backticks ` `, pour eviter le + à repetition et utiliser les template string
-                                    `Le ${AujourDHui.getDate()}, on est à ${Math.round(pourcentage)}% du mois de ${MoisLong}`;
+                                    `Le ${AujourDHui.getDate()}, on est à ${Math.round(Pourcentage)}% du mois de ${MoisLong}`;
                             }
 
 progressionMois();
@@ -64,14 +61,14 @@ progressionMois();
 function progressionMois() {
                               let AujourDHui = new Date();
                               let TotalJours = new Date(AujourDHui.getFullYear(), today.getMonth() + 1, 0).getDate(); 
-                              let pourcentage = (AujourDHui.getDate() / TotalJours) * 100;
+                              let Pourcentage = (AujourDHui.getDate() / TotalJours) * 100;
                               let MoisLong = today.toLocaleDateString('fr-FR', { month: 'long' });
                               let bar = document.getElementById("Mois-Barre");
-                              bar.style.width = pourcentage + "%";
+                              bar.style.width = Pourcentage + "%";
                               document.getElementById("Mois-Texte").innerText = 
-                                      `${Math.round(pourcentage)} % de ${MoisLong}`;
+                                      `${Math.round(Pourcentage)} % de ${MoisLong}`;
                              document.getElementById("Mois-Valeur").innerText =                                   
-                                    `Le ${today.getDate()}, on est à ${Math.round(pourcentage)}% du mois de ${MoisLong}`;
+                                    `Le ${today.getDate()}, on est à ${Math.round(Pourcentage)}% du mois de ${MoisLong}`;
                             }
 progressionMois();
 </script>
