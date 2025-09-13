@@ -9,8 +9,8 @@
 
   <h2>Barre de progression personnalisable</h2>
 
-  <div class="progress-container">
-    <div id="progress-bar" class="progress-bar">0%</div>
+  <div class="ProgressContainer">
+    <div id="ProgressBarre" class="ProgressBarre">0%</div>
   </div>
 
   <div class="controls">
@@ -30,7 +30,7 @@
   </div>
 
   <script>
-    const progressBar = document.getElementById('progress-bar');
+    const progressBar = document.getElementById('ProgressBarre');
     const progressInput = document.getElementById('progress-input');
     const colorInput = document.getElementById('color-input');
     const updateBtn = document.getElementById('update-btn');
@@ -62,7 +62,7 @@
     exportBarBtn.addEventListener('click', () => {
       const barHTML = `
 <div class="progress-container">
-  <div class="progress-bar" style="width:${progressInput.value}%; background:${colorInput.value};">
+  <div class="ProgressBarre" style="width:${progressInput.value}%; background:${colorInput.value};">
     ${progressInput.value}%
   </div>
 </div>`;
