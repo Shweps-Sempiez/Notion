@@ -70,6 +70,8 @@ function ProgressionMois3() {
                               Barre.style.width = Pourcentage + "%";
                               document.getElementById("Mois-Texte").innerText = 
                                       `${Math.round(Pourcentage)} % de ${MoisLong}`;
+    // TEST avec alert
+  alert(`Le ${AujourDHui.getDate()}, on est à ${Math.round(Pourcentage)}% du mois de ${MoisLong}`);
                               document.getElementById("Mois-Valeur").innerText = 
                                     `Le ${AujourDHui.getDate()}, on est à ${Math.round(Pourcentage)}% du mois de ${MoisLong}`;
                             }
