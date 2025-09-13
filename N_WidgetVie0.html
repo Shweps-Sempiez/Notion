@@ -27,8 +27,8 @@
 <br>
 
 <div>Définition d'une valeur en % en fonction d'une valeur qui se modifie regulièrement (chaque jour) </div>
-<div><progress id="mois" max="100" value="0"></progress></div>
-<div><span id="mois-valeur1"></span></div>
+<div><progress id="Mois" max="100" value="0"></progress></div>
+<div><span id="Mois-Valeur"></span></div>
 
 <script>
 function progressionMois() {
@@ -40,7 +40,7 @@ function progressionMois() {
                             let MoisLong = today.toLocaleDateString("fr-FR", { month: 'long' });
 
                             // Mettre à jour la barre
-                            document.getElementById("mois").value = pourcentage;
+                            document.getElementById("Mois").value = pourcentage;
 
                             // Afficher le pourcentage arrondi à côté
                             document.getElementById("mois-valeur1").innerText = 
