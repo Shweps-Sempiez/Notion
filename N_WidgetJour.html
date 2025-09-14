@@ -43,7 +43,7 @@ function FonctDate() {
 
     // Affichage avec saut de ligne
                         document.getElementById('Aff_Date').innerHTML = 
-                                "Nous sommes <b><span style='font-size:2rem;'>" + NomJour + "</span></b><br>Le " + DateComplete;
+                                "Nous sommes <b><span style='font-size:2rem;'>" + NomJour + "</span></b><br>" + DateComplete;
                         }
 
 function FonctHeure() {
@@ -54,9 +54,9 @@ function FonctHeure() {
 
                         var hrs = AujourDHui.getHours();
                         var Salutation = "";
-                        if (hrs < 14)                     Salutation = 'Bon Matin';
-                        else if (hrs >= 14 && hrs <= 19)  Salutation = 'Bonne après-midi';
-                        else if (hrs >= 19 && hrs <= 24)  Salutation = 'Bonsoir';
+                        if (hrs < 14)                     Salutation = 'Bon " + NomJour + "matin';
+                        else if (hrs >= 14 && hrs <= 19)  Salutation = 'Bon " + NomJour + "après-midi';
+                        else if (hrs >= 19 && hrs <= 24)  Salutation = 'Bon " + NomJour + "soir';
 
                         document.getElementById('Salut').innerHTML = Salutation;
                         document.getElementById('hour').innerHTML = hour;
