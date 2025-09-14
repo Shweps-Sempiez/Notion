@@ -32,15 +32,15 @@
 
 <script>
 function FonctDate() {
-                         var today = new Date();
+                         var AujourDHui = new Date();
 
     // Jour de la semaine
                         var optionsDay = { weekday: 'long' };
-                        var dayName = today.toLocaleDateString("fr-FR", optionsDay);
+                        var dayName = AujourDHui.toLocaleDateString("fr-FR", optionsDay);
 
     // Date complète
                         var optionsDate = { day: 'numeric', month: 'long', year: 'numeric' };
-                        var fullDate = today.toLocaleDateString("fr-FR", optionsDate);
+                        var fullDate = AujourDHui.toLocaleDateString("fr-FR", optionsDate);
 
     // Affichage avec saut de ligne
                         document.getElementById('Aff_Date').innerHTML = 
@@ -48,12 +48,12 @@ function FonctDate() {
                         }
 
 function FonctHeure() {
-                        var today = new Date();
-                        var hour = zeros(today.getHours());
-                        var minutes = zeros(today.getMinutes());
-                        var seconds = zeros(today.getSeconds());
+                        var AujourDHui = new Date();
+                        var hour = zeros(AujourDHui.getHours());
+                        var minutes = zeros(AujourDHui.getMinutes());
+                        var seconds = zeros(AujourDHui.getSeconds());
 
-                        var hrs = today.getHours();
+                        var hrs = AujourDHui.getHours();
                         var Salutation = "";
                         if (hrs < 14)                     Salutation = 'Bon Matin';
                         else if (hrs >= 14 && hrs <= 19)  Salutation = 'Bonne après-midi';
