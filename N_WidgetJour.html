@@ -18,6 +18,8 @@
         <div class="Carte_Visite">
             <div class="Salutation" id="Salut"></div>
             <div class="Salutation" id="Salut2"></div>
+            <div class="Salutation" id="Salut3"></div>
+            <div class="Salutation" id="Salut4"></div>
             <div class="Aff_Date" id="Aff_Date"></div>
             <div class="Aff_Horloge">
                 <div class="Heure" id="H"></div>
@@ -56,16 +58,29 @@ function FonctHeure() {
                         var hrs = AujourDHui.getHours();
     
 var Salutation = ""; 
-if (hrs < 14) Salutation = "Bon <b><span style='font-size:2rem;'>' + NomJour + '</span></b> matin"; 
-else if (hrs >= 14 && hrs <= 19) Salutation = "Bon <b><span style='font-size:2rem;'>' + NomJour + '</span></b> après-midi"; 
-else if (hrs >= 19 && hrs <= 24) Salutation = "Bon <b><span style='font-size:2rem;'>' + NomJour + '</span></b> soir"; 
+if (hrs < 14)                        Salutation = "Bon <b><span style='font-size:2rem;'>' + NomJour + '</span></b> matin"; 
+else if (hrs >= 14 && hrs <= 19)     Salutation = "Bon <b><span style='font-size:2rem;'>' + NomJour + '</span></b> après-midi"; 
+else if (hrs >= 19 && hrs <= 24)     Salutation = "Bon <b><span style='font-size:2rem;'>' + NomJour + '</span></b> soir"; 
 document.getElementById('Salut').innerHTML = Salutation;
 
 var Salutation2 = ""; 
-if (hrs < 14) {Salutation2 = "Bon <b><span style='font-size:2rem;'>" + NomJour + "</span></b> matin"; }
+if (hrs < 14) Salutation2 = "Bon <b><span style='font-size:2rem;'>" + NomJour + "</span></b> matin"; 
 else if (hrs >= 14 && hrs <= 19) Salutation2 = "Bon <b><span style='font-size:2rem;'>' + NomJour + '</span></b> après-midi"; 
 else if (hrs >= 19 && hrs <= 24) Salutation2 = "Bon <b><span style='font-size:2rem;'>' + NomJour + '</span></b> soir"; 
 document.getElementById('Salut2').innerHTML = Salutation2;
+
+var Salutation3 = ""; 
+if (hrs < 14) Salutation3 = "Bon <b><span style='font-size:2rem;'>' + NomJour + '</span></b> matin"; 
+else if (hrs >= 14 && hrs <= 19) Salutation3 = "Bon <b><span style='font-size:2rem;'>' + NomJour + '</span></b> après-midi"; 
+else if (hrs >= 19 && hrs <= 24) Salutation3 = "Bon <b><span style='font-size:2rem;'>' + NomJour + '</span></b> soir"; 
+document.getElementById('Salut3').innerHTML = Salutation3;
+
+var Salutation4 = ""; 
+if (hrs < 14) Salutation4 = "Bon <b><span style='font-size:2rem;'>' + NomJour + '</span></b> matin"; 
+else if (hrs >= 14 && hrs <= 19) Salutation4 = "Bon <b><span style='font-size:2rem;'>' + NomJour + '</span></b> après-midi"; 
+else if (hrs >= 19 && hrs <= 24) Salutation4 = "Bon <b><span style='font-size:2rem;'>' + NomJour + '</span></b> soir"; 
+document.getElementById('Salut4').innerHTML = Salutation4;
+
 
     
                         document.getElementById('H').innerHTML = hour;
