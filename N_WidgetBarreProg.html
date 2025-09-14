@@ -19,13 +19,13 @@
 </div>
 
 <script>
-function ProgressionMois1() {
+function FonctProgressionMois1() {
                 // Récupérer la barre
                       let Barre = document.getElementById("File");
                 // Exemple : mettre la valeur à 30
                       Barre.value = 30;
                              }
-ProgressionMois1();
+FonctProgressionMois1();
 </script>
 <br>
 
@@ -34,7 +34,7 @@ ProgressionMois1();
 <div><span id="Mois-Valeur2"></span></div>
 
 <script>
-function ProgressionMois2() {
+function FonctProgressionMois2() {
                             let AujourDHui = new Date();
                             let TotalJours = new Date(AujourDHui.getFullYear(), AujourDHui.getMonth()+1, 0).getDate();  
                             let Pourcentage = (AujourDHui.getDate() / TotalJours) * 100;
@@ -48,7 +48,7 @@ function ProgressionMois2() {
                                     `Le ${AujourDHui.getDate()}, on est à ${Math.round(Pourcentage)}% du mois de ${MoisLong}`;
                             }
 
-ProgressionMois2();
+FonctProgressionMois2();
 </script>
 <br>
     
@@ -61,7 +61,7 @@ ProgressionMois2();
 <div><span id="Mois-Valeur3"></span></div>
     
 <script>
-function ProgressionMois3() {
+function FonctProgressionMois3() {
                               let AujourDHui = new Date();
                               let TotalJours = new Date(AujourDHui.getFullYear(), AujourDHui.getMonth() + 1, 0).getDate(); 
                               let Pourcentage = (AujourDHui.getDate() / TotalJours) * 100;
@@ -70,12 +70,12 @@ function ProgressionMois3() {
                               Barre.style.width = Pourcentage + "%";
                               document.getElementById("Mois-Texte").innerText = 
                                       `${Math.round(Pourcentage)} % de ${MoisLong}`;
-    // TEST avec alert
-  alert(`Le ${AujourDHui.getDate()}, on est à ${Math.round(Pourcentage)}% du mois de ${MoisLong}`);
                               document.getElementById("Mois-Valeur3").innerText = 
                                     `Le ${AujourDHui.getDate()}, on est à ${Math.round(Pourcentage)}% du mois de ${MoisLong}`;
+                    // TEST avec alert
+                              alert(`Le ${AujourDHui.getDate()}, on est à ${Math.round(Pourcentage)}% du mois de ${MoisLong}`);
                             }
-ProgressionMois3();
+FonctProgressionMois3();
 </script>
     
 </body>
