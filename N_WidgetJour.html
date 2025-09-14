@@ -70,9 +70,9 @@ else if (hrs >= 19 && hrs <= 24)     Salutation2 = "Bon <b><span style='font-siz
 document.getElementById('Salut2').innerHTML = Salutation2;
 
 var Salutation3 = ""; 
-if (hrs < 14)                        Salutation3 = `Bon <b><span style="font-size:2rem;">${NomJour}</span></b> matin`; 
-else if (hrs >= 14 && hrs <= 19)     Salutation3 = `Bon <b><span style="font-size:2rem;">$ {NomJour}</span></b> après-midi`; 
-else if (hrs >= 19 && hrs <= 24)     Salutation3 = "Bon <b><span style="font-size:2rem;">${NomJour}</span></b> soir`; 
+if (hrs < 14)                        Salutation3 = `Bon <b><span style="font-size:2rem;">matin</span></b> `; 
+else if (hrs >= 14 && hrs <= 19)     Salutation3 = `Bon <b><span style="font-size:2rem;">après-midi</span></b> `; 
+else if (hrs >= 19 && hrs <= 24)     Salutation3 = "Bon <b><span style="font-size:2rem;">soir</span></b> `; 
 document.getElementById('Salut3').innerHTML = Salutation3;
 
 
