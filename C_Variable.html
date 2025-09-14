@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Test Salutations</title>
+</head>
+<body>
+
+  <script>
+// VARIABLE GLOBALE (hors de toute fonction ou bloc)
+var globalVar = "Je suis var globale";
+let globalLet = "Je suis let globale";
+
+console.log("Avant tout bloc:");
+console.log("globalVar =", globalVar); // OK
+console.log("globalLet =", globalLet); // OK
+
+//--------------------------------------------
+// Bloc 1
+{
+    var varBloc = "var dans bloc";
+    let letBloc = "let dans bloc";
+    reinBloc = "rien devant dans bloc"; // devient globale automatiquement !
+
+    console.log("\nDans le bloc:");
+    console.log("varBloc =", varBloc); // OK
+    console.log("letBloc =", letBloc); // OK
+    console.log("reinBloc =", reinBloc); // OK
+}
+
+// Hors du bloc
+console.log("\nAprès le bloc:");
+console.log("varBloc =", varBloc); // OK ! var remonte au scope fonctionnel ou global si pas dans fonction
+// console.log("letBloc =", letBloc); // Erreur ! letBloc limité au bloc
+console.log("reinBloc =", reinBloc); // OK ! variable globale par défaut
+
+//--------------------------------------------
+// Fonction
+function testFonction() {
+    var varFonction = "var dans fonction";
+    let letFonction = "let dans fonction";
+    reinFonction = "rien devant dans fonction"; // devient globale
+
+    console.log("\nDans fonction:");
+    console.log("varFonction =", varFonction); // OK
+    console.log("letFonction =", letFonction); // OK
+    console.log("reinFonction =", reinFonction); // OK
+}
+
+testFonction();
+
+console.log("\nAprès fonction:");
+// console.log("varFonction =", varFonction); // Erreur ! var limitée à la fonction
+// console.log("letFonction =", letFonction); // Erreur ! let limitée à la fonction
+console.log("reinFonction =", reinFonction); // OK ! variable globale
+
+  </script>
+</body>
+</html>
