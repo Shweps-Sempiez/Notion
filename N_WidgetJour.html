@@ -39,11 +39,11 @@ function FonctDate() {
 
     // Date complète
                         var OptionsDate = { day: 'numeric', month: 'long', year: 'numeric' };
-                        var fullDate = AujourDHui.toLocaleDateString("fr-FR", OptionsDate);
+                        var DateComplete = AujourDHui.toLocaleDateString("fr-FR", OptionsDate);
 
     // Affichage avec saut de ligne
                         document.getElementById('Aff_Date').innerHTML = 
-                                "Nous sommes <b><span style='font-size:2rem;'>" + NomJour + "</span></b><br>Le " + fullDate;
+                                "Nous sommes <b><span style='font-size:2rem;'>" + NomJour + "</span></b><br>Le " + DateComplete;
                         }
 
 function FonctHeure() {
