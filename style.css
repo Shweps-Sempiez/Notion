@@ -1,4 +1,13 @@
-/*CSS RESETS*/
+/*
+Regles CSS : 
+.Salutation { color: green; }
+#Salutation { color: red; }
+div { color: blue; }
+✅ Résultat → le texte sera rouge car l’'#'ID a priorité sur la '.' classe  et sur '<>'la balise (tag).
+inline style (style="color: yellow;") → priorité encore plus haute
+'!important' → écrase presque tout sauf un autre !important plus spécifique
+*/
+
 body {
   background-color: #fff;
   line-height: 1.6;
