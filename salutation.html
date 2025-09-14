@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Test Salutations</title>
+</head>
+<body>
+  <h2 id="salutTexte">Ici apparaîtra la salutation</h2>
+  <button onclick="testConsole()">Test Console.log</button>
+  <button onclick="testAlert()">Test Alert</button>
+  <button onclick="testReturn()">Test Return</button>
+
+  <script>
+    // Fonction qui calcule la salutation
+    function getSalutation() {
+      const hrs = new Date().getHours(); // heure actuelle
+      const NomJour = "aujourd'hui";
+      if (hrs < 14) return "Bon <b><span style='font-size:2rem;'>" + NomJour + "</span></b> matin";
+      else if (hrs >= 14 && hrs <= 19) return "Bon <b><span style='font-size:2rem;'>" + NomJour + "</span></b> après-midi";
+      else return "Bon <b><span style='font-size:2rem;'>" + NomJour + "</span></b> soir";
+    }
+
+    // --- VERSION 1 : console.log ---
+    function testConsole() {
+      const message = getSalutation();
+      console.log(message); // affiché SEULEMENT dans la console
+      document.getElementById("salutTexte").innerHTML = "(Rien ne change ici : regarde la console avec F12)";
+    }
+
+    // --- VERSION 2 : alert ---
+    function testAlert() {
+      const message = getSalutation();
+      alert(message); // bloque tout jusqu'à ce que tu cliques OK
+      document.getElementById("salutTexte").innerHTML = "(Rien ne change ici : le message était dans une popup)";
+    }
+
+    // --- VERSION 3 : return (utilisé pour modifier la page) ---
+    function testReturn() {
+      const message = getSalutation(); // on récupère le return
+      document.getElementById("salutTexte").innerHTML = message; // on l’affiche dans la page
+    }
+  </script>
+</body>
+</html>
