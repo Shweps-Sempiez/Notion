@@ -35,7 +35,7 @@ function FonctDate() {
                          var AujourDHui = new Date();
 
     // Jour de la semaine
-                        var dayName = AujourDHui.toLocaleDateString("fr-FR", { weekday: 'long' });
+                        var NomJour = AujourDHui.toLocaleDateString("fr-FR", { weekday: 'long' });
 
     // Date complète
                         var optionsDate = { day: 'numeric', month: 'long', year: 'numeric' };
@@ -43,7 +43,7 @@ function FonctDate() {
 
     // Affichage avec saut de ligne
                         document.getElementById('Aff_Date').innerHTML = 
-                                "Nous sommes <b><span style='font-size:2rem;'>" + dayName + "</span></b><br>Le " + fullDate;
+                                "Nous sommes <b><span style='font-size:2rem;'>" + NomJour + "</span></b><br>Le " + fullDate;
                         }
 
 function FonctHeure() {
