@@ -55,9 +55,9 @@ function FonctHeure() {
 
                         var hrs = AujourDHui.getHours();
  var Salutation = ""; 
-if (hrs < 14) Salutation = "Bon <b><span style='font-size:2rem;'>' + NomJour + '</span></b> matin"; 
-else if (hrs >= 14 && hrs <= 19) Salutation = "Bon <b><span style='font-size:2rem;'>' + NomJour + '</span></b> après-midi"; 
-else if (hrs >= 19 && hrs <= 24) Salutation = "Bon <b><span style='font-size:2rem;'>' + NomJour + '</span></b> soir"; 
+if (hrs < 14)                     Salutation = "Bon <b><span style='font-size:2rem;'>" + NomJour + "</span></b> matin"; 
+else if (hrs >= 14 && hrs <= 19)  Salutation = "Bon <b><span style='font-size:2rem;'>" + NomJour + "</span></b> après-midi"; 
+else if (hrs >= 19 && hrs <= 24)  Salutation = "Bon <b><span style='font-size:2rem;'>" + NomJour + "</span></b> soir"; 
 document.getElementById('Salut').innerHTML = Salutation;
     
 
