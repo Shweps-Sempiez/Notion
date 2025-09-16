@@ -49,11 +49,12 @@ function FonctDate() {
 
 function FonctHeure() {
                         var AujourDHui = new Date();
-                        var hour = zeros(AujourDHui.getHours());
+                        var hrs = AujourDHui.getHours();
+                        var hour = zeros(hrs);
                         var minutes = zeros(AujourDHui.getMinutes());
                         var seconds = zeros(AujourDHui.getSeconds());
 
-                        var hrs = AujourDHui.getHours();
+                        
     
 var Salutation = ""; 
 if (hrs < 14)                        Salutation = `Bon <b><span style="font-size:2rem;">${NomJour}</span></b> matin`; 
